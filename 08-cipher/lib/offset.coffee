@@ -1,19 +1,19 @@
-
-
-exports.encrypt = (string, secret = 1) ->
-  result = ''
-  for char in string
-    code = char.charCodeAt(0)
-    if code <= 41
-      result += char
-    else
-      result += String.fromCharCode(code - secret)
-
-  return result
-
-
-exports.decrypt = (string, secret = 1) ->
-  #
-  # !!! Place your solition here !!!
-  #
-  return 'fix me'
+public static String decode(String enString,int ecount){
+		String dString="";
+		for (int k=0;k<ecount;k++){
+			char ec=enString.charAt(k);
+			int value=(int) ec;
+			if(value>=97 && value <126){
+				value=value+1;
+				dString=dString+(char)value;		
+				
+			}
+			else if (value >=32 && value <=96){
+				value=value-1;
+				dString=dString+(char)value;
+				
+			}
+		}
+		return dString;
+		
+	}
